@@ -1,0 +1,12 @@
+v 1 eval {set sim_annotation {1 5 join-group 1073741824}}
+v 1.5 eval {set sim_annotation {1.5 6 join-group 1073741824}}
+v 2.5 eval {set sim_annotation {2.5 7 join-group 1073741824}}
+v 3 eval {set sim_annotation {3 5 join-group 1073741825}}
+v 3.5 eval {set sim_annotation {3.5 6 join-group 1073741825}}
+v 3.5 eval {set sim_annotation {3.5 7 join-group 1073741825}}
+v 4 eval {set sim_annotation {4 5 leave-group 1073741824}}
+v 4.5 eval {set sim_annotation {4.5 6 leave-group 1073741824}}
+v 5 eval {set sim_annotation {5 7 leave-group 1073741824}}
+v 5.5 eval {set sim_annotation {5.5 5 leave-group 1073741825}}
+v 6 eval {set sim_annotation {6 6 leave-group 1073741825}}
+v 6.5 eval {set sim_annotation {6.5 7 leave-group 1073741825}}

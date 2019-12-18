@@ -1,54 +1,62 @@
 #
-# nodes: 5, max conn: 10, send rate: 0.0, seed: 0
+# nodes: 6, max conn: 10, send rate: 0.0, seed: 0
 #
 #
-# 0 connecting to 1 at time 28.451709835069121
+# 0 connecting to 1 at time 9.0575922788388983
 #
 set tcp_(0) [$ns_ create-connection  TCP $node_(0) TCPSink $node_(1) 0]
 $tcp_(0) set window_ 32
 $tcp_(0) set packetSize_ 512
 set ftp_(0) [$tcp_(0) attach-source FTP]
-$ns_ at 28.451709835069121 "$ftp_(0) start"
+$ns_ at 9.0575922788388983 "$ftp_(0) start"
 #
-# 0 connecting to 2 at time 172.89978705015955
+# 0 connecting to 2 at time 26.84490360638355
 #
 set tcp_(1) [$ns_ create-connection  TCP $node_(0) TCPSink $node_(2) 0]
 $tcp_(1) set window_ 32
 $tcp_(1) set packetSize_ 512
 set ftp_(1) [$tcp_(1) attach-source FTP]
-$ns_ at 172.89978705015955 "$ftp_(1) start"
+$ns_ at 26.84490360638355 "$ftp_(1) start"
 #
-# 2 connecting to 3 at time 61.222962141606473
+# 1 connecting to 2 at time 2.8010435322304459
 #
-set tcp_(2) [$ns_ create-connection  TCP $node_(2) TCPSink $node_(3) 0]
+set tcp_(2) [$ns_ create-connection  TCP $node_(1) TCPSink $node_(2) 0]
 $tcp_(2) set window_ 32
 $tcp_(2) set packetSize_ 512
 set ftp_(2) [$tcp_(2) attach-source FTP]
-$ns_ at 61.222962141606473 "$ftp_(2) start"
+$ns_ at 2.8010435322304459 "$ftp_(2) start"
 #
-# 2 connecting to 4 at time 119.48787999315553
+# 1 connecting to 3 at time 67.128673674132983
 #
-set tcp_(3) [$ns_ create-connection  TCP $node_(2) TCPSink $node_(4) 0]
+set tcp_(3) [$ns_ create-connection  TCP $node_(1) TCPSink $node_(3) 0]
 $tcp_(3) set window_ 32
 $tcp_(3) set packetSize_ 512
 set ftp_(3) [$tcp_(3) attach-source FTP]
-$ns_ at 119.48787999315553 "$ftp_(3) start"
+$ns_ at 67.128673674132983 "$ftp_(3) start"
 #
-# 3 connecting to 4 at time 170.09138563186463
+# 3 connecting to 4 at time 111.75743300083906
 #
 set tcp_(4) [$ns_ create-connection  TCP $node_(3) TCPSink $node_(4) 0]
 $tcp_(4) set window_ 32
 $tcp_(4) set packetSize_ 512
 set ftp_(4) [$tcp_(4) attach-source FTP]
-$ns_ at 170.09138563186463 "$ftp_(4) start"
+$ns_ at 111.75743300083906 "$ftp_(4) start"
 #
-# 4 connecting to 5 at time 61.313906713069372
+# 3 connecting to 5 at time 84.988748973695905
 #
-set tcp_(5) [$ns_ create-connection  TCP $node_(4) TCPSink $node_(5) 0]
+set tcp_(5) [$ns_ create-connection  TCP $node_(3) TCPSink $node_(5) 0]
 $tcp_(5) set window_ 32
 $tcp_(5) set packetSize_ 512
 set ftp_(5) [$tcp_(5) attach-source FTP]
-$ns_ at 61.313906713069372 "$ftp_(5) start"
+$ns_ at 84.988748973695905 "$ftp_(5) start"
 #
-#Total sources/connections: 4/6
+# 4 connecting to 5 at time 160.06879523399695
+#
+set tcp_(6) [$ns_ create-connection  TCP $node_(4) TCPSink $node_(5) 0]
+$tcp_(6) set window_ 32
+$tcp_(6) set packetSize_ 512
+set ftp_(6) [$tcp_(6) attach-source FTP]
+$ns_ at 160.06879523399695 "$ftp_(6) start"
+#
+#Total sources/connections: 4/7
 #

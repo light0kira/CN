@@ -16,10 +16,10 @@ set val(cf)		"cf"
 
 set ns_ [new Simulator]
 set tf [open 8.tr w]
-$ns trace-all $tf
+$ns_ trace-all $tf
 
 set nf [open 8.nam w]
-$ns namtrace-all-wireless $nf $val(x) $val(y)
+$ns_ namtrace-all-wireless $nf $val(x) $val(y)
 
 set topo [new Topography]
 $topo load_flatgrid $val(x) $val(y)
@@ -29,18 +29,18 @@ set prop [new $val(prop)]
 set god_ [create-god $val(nn)]
 
 $ns_ node-config -adhocRouting $val(rp) \
-		 -llType $val(ll) \
-		 -macType $val(mac) \
-		 -ifqType $val(ifq) \
-		 -ifqLen $val(ifqlen) \
-		 -antType $val(ant) \
-		 -propType $val(prop) \
-		 -phyType $val(netif) \
-		 -channelType $val(chan) \
-		 -topoInstance $topo \
-		 -agentTrace ON \
-		 -routerTrace ON \
-		 -macTrace ON \
+-llType $val(ll) \
+-macType $val(mac) \
+-ifqType $val(ifq) \
+-ifqLen $val(ifqlen) \
+-antType $val(ant) \
+-propType $val(prop) \
+-phyType $val(netif) \
+-channelType $val(chan) \
+-topoInstance $topo \
+-agentTrace ON \
+-routerTrace ON \
+-macTrace ON \
 		 
 for {set i 0} {$i<$val(nn)} {incr i} {
  set node_($i) [$ns_ node]	
@@ -92,7 +92,7 @@ for {set i 0} {$i<$val(nn)} {incr i} {
 $ns_ at $val(stop) "$node_($i) reset";
 }
 
-$ns_ at $val(stop) "puts \"NS EXITING ...\"; $ns halt"
+$ns_ at $val(stop) "puts \"ns_ EXITING ...\"; $ns_ halt"
 puts "Starting Simulation ... "
 
 $ns_ run
